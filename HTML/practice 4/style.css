@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: double;
+}
+
+th {
+  text-align: center;
+}
+td,
+tr {
+  text-align: left;
+  border: 1px solid black;
+  padding: 5px 15px;
+}
+
+th#name{
+  background: #84d181;
+  font-size: large;
+  border: 1px solid black;
+}
+
+table th:nth-child(1) {
+  background: rgba(184, 192, 236, 0.781);
+  border: 1px solid black;
+}
+
+table tr:first-child th {
+  border: 1px solid black;
+}
+
+table tr td:nth-child(3),
+#third {
+  background: rgba(224, 145, 171, 0.945);
+}
+
+table tr td:nth-child(4),
+#fourth {
+  background: rgb(229, 250, 135);
+}
