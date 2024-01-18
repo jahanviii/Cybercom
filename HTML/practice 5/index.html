@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Practice 5</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <div class="banner">
+          <img src="/HTML/image.jpeg" alt="image" />
+          <div class="heading">CONTACT US</div>
+        </div>
+
+        <form onsubmit="handleButtonClick()">
+          <div class="input-container">
+            <i class="far fa-user"></i>
+            <input type="text" placeholder="Full name" />
+          </div>
+
+          <div class="input-container">
+            <i class="far fa-envelope"></i>
+            <input type="email" placeholder="Eg. example@gmail.com" />
+          </div>
+
+          <div class="input-container">
+            <i class="fas fa-phone"></i>
+            <input type="tel" placeholder="Eg. +1800 000000" />
+          </div>
+
+          <div class="textarea-container">
+            <i class="far fa-comment"></i>
+            <textarea
+              rows="4"
+              placeholder="Your comments..."
+              id="comment"
+            ></textarea>
+          </div>
+
+          <button>SEND NOW</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function handleButtonClick() {
+        alert("Your request has been submitted!");
+      }
+    </script>
+  </body>
 </html>

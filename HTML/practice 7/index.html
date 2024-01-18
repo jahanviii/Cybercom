@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="main-container">
+    <form action="Information.php" >
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div class="container">
+          <label for="first_name">First name:</label>
+          <input id="first_name" type="text" required/>
+        </div>
+        <div class="container">
+          <label for="last_name">Last name:</label>
+          <input id="last_name" type="text" />
+        </div>
+        <div class="container">
+          <label for="birthday">Date of Birth:</label>
+          <input id="birthday" type="date" required/>
+        </div>
+        <div class="container">
+          <label for="gender">Gender:</label>
+          <select id="gender">
+            <option value="">Choose a gender</option>
+    <option value="female">Female</option>
+    <option value="male">Male</option>
+    </select>
+    </div>
+        </fieldset>
+    <!-- Account info -->
+    <fieldset>
+      <legend>Account Information</legend>
+      <div class="container">
+        <label for="email">Email:</label>
+        <input id="email" type="email" required/>
+        <sub style="margin-left:18rem;">(Your email address will be your username)</sub>
+        </div>
+        <div class="container">
+          <label for="reemail">Re-type Email:</label>
+          <input id="reemail" type="email" />
+          </div>
+          <div class="container">
+          <label for="password">Password:</label>
+          <sub style="margin-left:3px;">(Min. 8 characters,1 number,case-sensitive)</sub>
+          <input id="password" type="password" required/>
+        </div>
+        <div class="container">
+          <label for="password">Re-type Password:</label>
+          <input id="repassword" type="password" />
+        </div>
+        <div class="container">
+          <label for="security_question">Security Question:</label>
+          <select id="gender">
+            <option value="">Choose a security question</option><span>&#63;</span>
+    <option value="hometown">What is your hometown?</option>
+    <option value="color">What is your favourite color?</option>
+    </select>
+    </div>
+    <div class="container">
+      <label for="security_answer">Security Answer:</label>
+      <input id="securityanswer" type="text" />
+    </div>
+    </fieldset>
+    <!-- contact info -->
+    <fieldset>
+      <legend>Contact Information</legend>
+      <div class="container">
+        <label for="address">Address:</label>
+        <input id="address" type="text" />
+        </div>
+        <div class="container">
+          <label for="city">City:</label>
+          <input id="city" type="text" />
+        </div>
+        <div class="container">
+          <label for="state">State:</label>
+          <select id="state">
+            <option value="">Choose a state</option>
+    <option value="gujarat">Gujarat</option>
+    <option value="rajasthan">Rajasthan</option>
+    </select>
+    </div>
+    <div class="container">
+      <label for="zipcode">Zipcode:</label>
+    <input id="zipcode" type="text" style="width:110px;"> 
+    <button type="button" style="margin-left:20px;margin-top:8px;padding:10px;">Optional</button>
+    </div>
+    <br/>
+    <div class="container">
+       <label for="phone">Phone:</label>
+      <input id="telephone" type="text" style="width:110px;" required>
+      <span><i class="fa fa-question-circle"></i>
+      </span> 
+      <select id="teltype" style="width:110px;">
+<option value="mobile">Mobile</option>
+<option value="office">Office</option>
+</select>
+    </div>
+    </fieldset>
+    <div class="submit">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+    </form>
+  </div>
+</body>
+</html>

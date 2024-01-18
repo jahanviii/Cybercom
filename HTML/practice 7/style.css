@@ -1,0 +1,33 @@
+*{
+  box-sizing: border-box;
+}
+.main-container{
+  border: 1px solid black;
+  width: auto;
+  font-family: sans-serif;
+  margin: 50px;
+  padding: 30px;
+}
+.container label{
+ float: left;
+ width: 25%;
+ margin-top: 5px;
+}
+
+legend{
+  font-size: 20px;
+  font-weight: bold;
+}
+input,select,textarea{
+  float: left;
+  width: 75%;
+  padding: 1%;
+  margin-top: 6px;
+}
+fieldset {
+  border: 0;
+  padding: 20px;
+}
+.submit{
+  text-align: center;
+}

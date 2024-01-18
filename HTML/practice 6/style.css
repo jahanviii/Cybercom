@@ -1,0 +1,11 @@
+.container, fieldset {
+  margin: 6px 2px;
+  width: 60%;
+
+}
+
+label {
+  display: inline-block;
+  width: 192px;
+  vertical-align:top;
+ }
