@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+   integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Flight Booking Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+  <form id="bookingForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" class="name">
+    <h5 id="nameValid"></h5>
+   
+    <label for="email">Email</label>
+    <input type="text" id="email" class="email" required>
+    <h5 id="emailValid"></h5>
+    <label for="phoneNo">Phone No.</label>
+    <input type="tel" id="phoneNo" class="phoneNo">
+    <h5 id="phoneValid"></h5>
+    <label for="departure">Departure City</label>
+    <input type="text" id="departureCity" name="departure">
+    <h5 id="cityValid"></h5>
+    <label for="destination">Destination City</label>
+    <input type="text" id="destinationCity" name="destination">
+    <h5 id="destinationcityValid"></h5>
+    <label for="date">Travelling Date</label>
+    <input type="date" id="date" name="date" required>
+    <h5 id="dateValid"></h5>
+    <div class="button-container">
+    <button id="button">Submit</button>
+    </div>
+  </form>
+  </div>
+  <script type="text/javascript">
+    //when doc ready (refresh)
+    $(document).ready(function(){
+    $(`#nameValid`).hide();
+    $(`#emailValid`).hide();
+    $(`#phoneValid`).hide();
+    $(`#cityValid`).hide();
+    $(`#destinationcityValid`).hide();
+
+     
+    var name_err=true;
+    var email_err=true;
+    var phone_err=true;
+    var city_err=true;
+    var dcity_err=true;
+    
+   
+    $(`#name`).keyup(function(){
+       nameCheck();
+    });
+    $(`#email`).keyup(function(){
+      emailCheck();
+   });
+    $(`#phoneNo`).keyup(function(){
+      phoneCheck();
+   });
+   $(`#departureCity`).keyup(function(){
+       cityCheck();
+   });
+   $(`#destinationCity`).keyup(function(){
+    destinationcityCheck();
+});
+
+  function nameCheck(){
+    var nameValue=$(`#name`).val();
+    if(nameValue.length ==''){
+      $(`#nameValid`).show();
+      $(`#nameValid`).html("required!! please enter name");
+      $(`#nameValid`).focus();
+      $(`#nameValid`).css("color","red");
+      name_err=false;
+      return false;
+    }else{
+      $(`#nameValid`).hide();
+    }
+    if((nameValue.length<2)){
+      $(`#nameValid`).show();
+      $(`#nameValid`).html("min length 2");
+      $(`#nameValid`).focus();
+      $(`#nameValid`).css("color","red");
+      name_err=false;
+      return false;
+    }else{
+      $(`#nameValid`).hide();
+    }
+  }
+  function phoneCheck(){
+    var phoneValue=$(`#phoneNo`).val();
+    if(phoneValue.length ==''){
+      $(`#phoneValid`).show();
+      $(`#phoneValid`).html("required!! please enter number");
+      $(`#phoneValid`).focus();
+      $(`#phoneValid`).css("color","red");
+      phone_err=false;
+      return false;
+    }else{
+      $(`#phoneValid`).hide();
+    }
+    if(phoneValue.length>11 || phoneValue.length!=10){
+      $(`#phoneValid`).show();
+      $(`#phoneValid`).html("Please enter valid no");
+      $(`#phoneValid`).focus();
+      $(`#phoneValid`).css("color","red");
+      phone_err=false;
+      return false;
+    }else{
+      $(`#phoneValid`).hide();
+    }
+
+  }
+  function emailCheck(){
+    var emailValue=$(`#email`).val();
+    var emailRegex=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+     
+    if(emailValue.length == ''){
+      $(`#emailValid`).show();
+      $(`#emailValid`).html("required!! please enter email");
+      $(`#emailValid`).focus();
+      $(`#emailValid`).css("color","red");
+      email_err=false;
+      return false;
+    }else{
+      $(`#emailValid`).hide();
+    }
+
+    if(emailRegex.test("emailValue")){
+      $(`#emailValid`).show();
+      $(`#emailValid`).html("please enter valid email");
+      $(`#emailValid`).focus();
+      $(`#emailValid`).css("color","red");
+      email_err=false;
+      return false;
+    }else{
+      $(`#emailValid`).hide();
+    }
+  }
+
+  function cityCheck(){
+    var cityValue=$(`#departureCity`).val();
+    if(cityValue.length ==''){
+      $(`#cityValid`).show();
+      $(`#cityValid`).html("required!! please enter city");
+      $(`#cityValid`).focus();
+      $(`#cityValid`).css("color","red");
+      city_err=false;
+      return false;
+    }else{
+      $(`#cityValid`).hide();
+    }
+    if((cityValue.length<2)){
+      $(`#cityValid`).show();
+      $(`#cityValid`).html("min length 2");
+      $(`#cityValid`).focus();
+      $(`#cityValid`).css("color","red");
+      city_err=false;
+      return false;
+    }else{
+      $(`#cityValid`).hide();
+    }
+  }
+
+  function destinationcityCheck(){
+    var destinationValue=$(`#destinationCity`).val();
+    if(destinationValue.length ==''){
+      $(`#destinationcityValid`).show();
+      $(`#destinationcityValid`).html("required!! please enter city");
+      $(`#destinationcityValid`).focus();
+      $(`#destinationcityValid`).css("color","red");
+      dcity_err=false;
+      return false;
+    }else{
+      $(`#destinationcityValid`).hide();
+    }
+    if((destinationValue.length<2)){
+      $(`#destinationcityValid`).show();
+      $(`#destinationcityValid`).html("min length 2");
+      $(`#destinationcityValid`).focus();
+      $(`#destinationcityValid`).css("color","red");
+      dcity_err=false;
+      return false;
+    }else{
+      $(`#destinationcityValid`).hide();
+    }
+  }
+
+});
+  </script>
+</body>
+</html>
