@@ -167,13 +167,13 @@
   flex-direction: column;
   text-align: center;
   margin: 10px auto;
-  /* padding-top:1%; */
+  padding-top:1%;
   justify-content: center; 
 }
 #about h1{
   font-size: 45px;
   color: black;
-  margin-bottom: 25px;
+  margin-bottom:0%;
   position: relative;
 }
 #about h1::after{
@@ -201,11 +201,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+   
 }
 .innerdiv
 {
 	transform: scale(0.9);
-	margin: 1rem;
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-rows: repeat(2,19.5rem);
@@ -261,8 +261,7 @@
 .skill-logo img
 {
   margin:2%;
-  width:25%;
-  column-gap:5;
+  width:23%;
 	border-radius:10%;
 	border: 2px solid #cec5c5;
 }
