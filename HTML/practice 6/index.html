@@ -3,39 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Practical 6</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="main-container">
-    <form>
+    <form action="">
+    <!-- First fieldset -->
   <fieldset>
+    <!-- address -->
     <legend>Your address</legend>
+    <!-- first name -->
     <div class="container">
       <label for="first_name">First name</label>
       <input id="first_name" type="text" />
     </div>
+    <!-- last name -->
     <div class="container">
       <label for="last_name">Last name</label>
       <input id="last_name" type="text" />
     </div>
+    <!-- Street -->
     <div class="container">
       <label for="street">Street</label>
       <input id="street" type="text" />
     </div>
+    <!-- City -->
     <div class="container">
       <label for="city">City</label>
       <input id="city" type="text" />
     </div>
   </fieldset>
+   <!-- second fieldset -->
   <fieldset>
     <legend>Additional details</legend>
+    <!-- Biography -->
     <div class="container">
       <label for="biography">Biography</label><textarea id="biography"></textarea>
     </div>
+    <!-- image -->
     <div class="container">
       <label for="image">Image</label><input id="image" type="file" />
     </div>
+    <!-- age group-->
     <div class="container">
       <label for="age_group">Age Group</label><select id="age_group">
         <option>
@@ -50,8 +60,10 @@
       </select>
     </div>
   </fieldset>
+  <!-- third fieldset -->
   <fieldset>
     <legend>Interests</legend>
+    <!-- Hobbies -->
     <div class="container">
       <label for="hobbies">Hobbies
       </label>
@@ -70,6 +82,7 @@
         </option>
       </select>
     </div>
+    <!-- car -->
     <div class="container">
       <label for="favourite_car">
         Favourite car?
@@ -86,6 +99,7 @@
           </option>
         </select>
     </div>
+    <!-- Favourite public transport -->
     <div class="container">
       <label for="public_transports">Favourite public transport?</label>
       <select id="public_transports" multiple="">
