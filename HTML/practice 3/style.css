@@ -1,17 +1,21 @@
 .main {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  outline: 1px solid black;
+  margin: 80px;
+  margin-left: 430px;
+  width: 390px;
+  padding: 20px;
 }
-
 .table1,
 .table1 th,
 .table1 td {
   border: 2px solid black;
   border-collapse: collapse;
   padding: 4px;
+  /* box-sizing: border-box; */
 }
 
 .table2,
