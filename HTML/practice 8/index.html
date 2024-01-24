@@ -15,33 +15,40 @@
 </head>
 <body>
   <div class="container">
-  <form id="bookingForm">
+    <!-- form  -->
+  <form id="bookingForm" action="">
+    <!-- Name -->
     <label for="name">Name</label>
     <input type="text" id="name" class="name">
     <h5 id="nameValid"></h5>
-   
+     <!-- Email -->
     <label for="email">Email</label>
     <input type="email" id="email" class="email" required>
     <h5 id="emailValid"></h5>
+    <!-- Phone No. -->
     <label for="phoneNo">Phone No.</label>
     <input type="tel" id="phoneNo" class="phoneNo">
     <h5 id="phoneValid"></h5>
+    <!-- Departure City -->
     <label for="departure">Departure City</label>
     <input type="text" id="departureCity" name="departure">
     <h5 id="cityValid"></h5>
+    <!-- Destination City -->
     <label for="destination">Destination City</label>
     <input type="text" id="destinationCity" name="destination">
     <h5 id="destinationcityValid"></h5>
+    <!-- Travelling Date -->
     <label for="date">Travelling Date</label>
     <input type="date" id="date" name="date" required>
     <h5 id="dateValid"></h5>
+    <!-- Submit -->
     <div class="button-container">
     <button id="button">Submit</button>
     </div>
   </form>
   </div>
   <script type="text/javascript">
-    //when doc ready (refresh)
+    
     $(document).ready(function(){
     $(`#nameValid`).hide();
     $(`#emailValid`).hide();
@@ -72,7 +79,7 @@
    $(`#destinationCity`).keyup(function(){
     destinationcityCheck();
 });
-
+//Name validation
   function nameCheck(){
     var nameValue=$(`#name`).val();
     if(nameValue.length ==''){
@@ -96,6 +103,7 @@
       $(`#nameValid`).hide();
     }
   }
+  //Phone validation
   function phoneCheck(){
     var phoneValue=$(`#phoneNo`).val();
     if(phoneValue.length ==''){
@@ -120,6 +128,7 @@
     }
 
   }
+ // Email validation
   function emailCheck(){
     var emailValue=$(`#email`).val();
     var emailRegex=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -146,7 +155,7 @@
       $(`#emailValid`).hide();
     }
   }
-
+  //City validation
   function cityCheck(){
     var cityValue=$(`#departureCity`).val();
     if(cityValue.length ==''){
@@ -170,7 +179,7 @@
       $(`#cityValid`).hide();
     }
   }
-
+  //City validation
   function destinationcityCheck(){
     var destinationValue=$(`#destinationCity`).val();
     if(destinationValue.length ==''){
