@@ -1,33 +1,79 @@
-*{
-  box-sizing: border-box;
-}
-.main-container{
-  border: 1px solid black;
-  width: auto;
-  font-family: sans-serif;
-  margin: 50px;
-  padding: 30px;
-}
-.container label{
- float: left;
- width: 25%;
- margin-top: 5px;
-}
+ * {
+   margin: 0;
+   padding: 0;
+ }
 
-legend{
-  font-size: 20px;
-  font-weight: bold;
-}
-input,select,textarea{
-  float: left;
-  width: 75%;
-  padding: 1%;
-  margin-top: 6px;
-}
-fieldset {
-  border: 0;
-  padding: 20px;
-}
-.submit{
-  text-align: center;
-}
+ .container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ form {
+   padding: 10px;
+   border: 1px solid black;
+ }
+
+ fieldset {
+   border: none;
+   padding: 10px 0;
+ }
+
+ legend {
+   font-weight: bold;
+ }
+
+ input,
+ select {
+   width: 100%;
+ }
+
+ td {
+   text-align: end;
+   padding: 10px;
+ }
+
+ td:nth-child(1) {
+   width: 140px;
+ }
+
+ td:nth-child(2) {
+   text-align: start;
+   width: 300px;
+ }
+
+ .btn {
+   padding: 5px 20px;
+   width: max-content;
+ }
+
+ .flex {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ input[type="tel"] {
+   width: 50%;
+ }
+ .tooptip {
+   border-radius: 100%;
+   background-color: rgb(2, 2, 37);
+   color: white;
+   font-size: 10px;
+   height: 20px;
+   width: 20px;
+   margin: 0 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ span {
+   font-size: 14px;
+ }
+
+ #day,
+ #year {
+   width: 30%;
+   margin-left: 10px;
+ }

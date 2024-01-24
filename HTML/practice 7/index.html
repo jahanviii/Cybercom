@@ -1,114 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Practical 7</title>
-  <link rel="stylesheet" href="style.css">
+<html>
 
+<head>
+  <title>Practice 7</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-  <div class="main-container">
-    <form action="Information.php" >
+  <div class="container">
+    <form id="myForm">
+      <!-- Personal Information -->
       <fieldset>
         <legend>Personal Information</legend>
-        <div class="container">
-          <label for="first_name">First name:</label>
-          <input id="first_name" type="text" required/>
-        </div>
-        <div class="container">
-          <label for="last_name">Last name:</label>
-          <input id="last_name" type="text" />
-        </div>
-        <div class="container">
-          <label for="birthday">Date of Birth:</label>
-          <input id="birthday" type="date" required/>
-        </div>
-        <div class="container">
-          <label for="gender">Gender:</label>
-          <select id="gender">
-            <option value="">Choose a gender</option>
-    <option value="female">Female</option>
-    <option value="male">Male</option>
-    </select>
-    </div>
-        </fieldset>
-    <!-- Account info -->
-    <fieldset>
-      <legend>Account Information</legend>
-      <div class="container">
-        <label for="email">Email:</label>
-        <input id="email" type="email" required/>
-        <sub style="margin-left:18rem;">(Your email address will be your username)</sub>
-        </div>
-        <div class="container">
-          <label for="reemail">Re-type Email:</label>
-          <input id="reemail" type="email" />
-          </div>
-          <div class="container">
-          <label for="password">Password:</label>
-          <sub style="margin-left:3px;">(Min. 8 characters,1 number,case-sensitive)</sub>
-          <input id="password" type="password" required/>
-        </div>
-        <div class="container">
-          <label for="password">Re-type Password:</label>
-          <input id="repassword" type="password" />
-        </div>
-        <div class="container">
-          <label for="security_question">Security Question:</label>
-          <select id="gender">
-            <option value="">Choose a security question</option><span>&#63;</span>
-    <option value="hometown">What is your hometown?</option>
-    <option value="color">What is your favourite color?</option>
-    </select>
-    </div>
-    <div class="container">
-      <label for="security_answer">Security Answer:</label>
-      <input id="securityanswer" type="text" />
-    </div>
-    </fieldset>
-    <!-- contact info -->
-    <fieldset>
-      <legend>Contact Information</legend>
-      <div class="container">
-        <label for="address">Address:</label>
-        <input id="address" type="text" />
-        </div>
-        <div class="container">
-          <label for="city">City:</label>
-          <input id="city" type="text" />
-        </div>
-        <div class="container">
-          <label for="state">State:</label>
-          <select id="state">
-            <option value="">Choose a state</option>
-    <option value="gujarat">Gujarat</option>
-    <option value="rajasthan">Rajasthan</option>
-    </select>
-    </div>
-    <div class="container">
-      <label for="zipcode">Zipcode:</label>
-    <input id="zipcode" type="text" style="width:110px;"> 
-    <button type="button" style="margin-left:20px;margin-top:8px;padding:10px;">Optional</button>
-    </div>
-    <br/>
-    <div class="container">
-       <label for="phone">Phone:</label>
-      <input id="telephone" type="text" style="width:110px;" required>
-      <span><i class="fa fa-question-circle"></i>
-      </span> 
-      <select id="teltype" style="width:110px;">
-<option value="mobile">Mobile</option>
-<option value="office">Office</option>
-</select>
-    </div>
-    </fieldset>
-    <div class="submit">
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
-    </div>
+        <table>
+          <tr>
+            <td><label for="firstName">First Name :</label></td>
+            <td>
+              <input type="text" name="firstName" id="firstName" required />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="lastName">Last Name :</label></td>
+            <td><input type="text" name="lastName" id="lastName" /></td>
+          </tr>
+          <tr>
+            <td><label for="month">Date of Birth</label></td>
+            <td class="flex">
+              <select name="month" id="month" style="width: 30%" required>
+                <option value="" selected disabled>Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+              <select name="day" id="day" required>
+                <option value="" selected disabled>Day</option>
+                <script>
+                  for (var i = 1; i <= 31; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                  }
+                </script>
+              </select>
+
+              <select name="year" id="year" required>
+                <option value="" selected disabled>Year</option>
+                <script>
+                  for (var i = 2000; i <= 2024; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                  }
+                </script>
+              </select>
+              <div class="tooptip">
+                <i class="fa-solid fa-question"></i>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="lastname">Gender:</label></td>
+            <td class="flex">
+              <select>
+                <option value="" selected disabled>Choose a gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+              <div class="tooptip">
+                <i class="fa-solid fa-question"></i>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <!-- account information -->
+      <fieldset>
+        <legend>Account Information</legend>
+        <table>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td>
+              <input type="email" name="email" id="email" required />
+              <span>(Your email will be your username)</span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="cEmail">Re-type Email:</label></td>
+            <td>
+              <input type="email" name="cEmail" id="cEmail" required />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="password">Password :</label></td>
+            <td>
+              <input type="password" name="password" id="password" required />
+              <span>(Min. 8 characters,1 number,case-sensitive)</span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="cPassword">Re-type Password:</label></td>
+            <td>
+              <input type="password" name="cPassword" id="cPassword" required />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="securityQues">Security Question:</label></td>
+            <td class="flex">
+              <select name="securityQues" id="securityQues">
+                <option value="" selected disabled>
+                  Choose a security question
+                </option>
+                <option value="">
+                  What is the name of your your hometown?
+                </option>
+                <option value="">What is youe nickname?</option>
+              </select>
+              <div class="tooptip">
+                <i class="fa-solid fa-question"></i>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="securityAns">Security Answer:</label></td>
+            <td>
+              <input type="text" name="securityAns" />
+              <span>(Not case-sensitive)</span>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <!-- contact information -->
+      <fieldset>
+        <legend>Contact information</legend>
+        <table>
+          <tr>
+            <td><label for="address">Address:</label></td>
+            <td>
+              <input type="text" name="address" id="address" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="city">City:</label></td>
+            <td>
+              <input type="text" name="city" id="city" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="state">State:</label></td>
+            <td>
+              <select name="state" id="state">
+                <option value="" selected disabled>Choose a state</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="zipcode">Zip Code:</label></td>
+            <td class="flex" style="width: 50%">
+              <input type="text" name="zipcode" id="zipcode" />
+              <input type="text" placeholder="Optional" disabled style="margin-left: 10px" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="phone">Phone:</label></td>
+            <td>
+              <div class="flex">
+                <input type="tel" name="phone" id="phone" required />
+                <div class="tooptip">
+                  <i class="fa-solid fa-question"></i>
+                </div>
+                <select name="phoneType" id="phoneType" style="width: 30%">
+                  <option value="mobile">Mobile</option>
+                  <option value="telephone">Telephone</option>
+                </select>
+              </div>
+              <span>No space or dashes</span>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <input type="submit" class="btn" />
+      <input type="reset" class="btn" />
     </form>
   </div>
 </body>
+
 </html>
