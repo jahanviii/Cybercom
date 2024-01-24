@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 1.2</title>
+</head>
+<body>
+  <div>
+    <ul id="itemList">
+     <li>One</li>
+     <li>Two</li>
+     <li>Three</li>
+    </ul>
+    <input type="text" id="newItem">
+    <button id="addItem" onclick="addItem()">Add Item</button>
+    <button id="addItem" onclick="removeItem()">Remove Item</button>
+   </div>
+</body>
+<script>
+  function addItem(){
+    let input=document.getElementById('newItem');
+    let itemList=document.getElementById('itemList');
+    let li=document.createElement('li');
+    li.innerHTML=input.value;
+    itemList.appendChild(li);
+  }
+  function removeItem(){
+    var itemList=document.getElementById('itemList');
+    itemList.removeChild(itemList.lastElementChild);
+  }
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 1.4</title>
+  <style>
+    .error{
+      color: red;
+    }body
+    {
+        display: block;
+        text-align: center;
+    }
+    form
+    {
+        width:12%;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <form id="validationForm" onsubmit="return formValidate()">
+
+    <label for="name">Name</label>
+    <input type="text" id="name">
+    <br>
+    <span id="nameError" class="error"></span>
+    <br>
+
+    <label for="email">Email</label>
+    <input type="email" id="email">
+    <br>
+    <span id="emailError" class="error"></span>
+    <br>
+
+    <label for="telephone">Phone No</label>
+    <input type="tel" id="phone">
+    <br>
+    <span id="telError" class="error"></span>
+    <br>
+
+    <label for="pswd">Password</label>
+    <input type="password" id="pswd">
+    <br>
+    <span id="pswdError" class="error"></span>
+    <br>
+
+    <input type="submit" value="submit">
+  </form>
+  <script>
+    function formValidate() {
+      const form = document.getElementById('validationForm');
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('pswd').value;
+      const phone = document.getElementById('phone').value;
+      const regEmail =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+      if (name == "") {
+        document.getElementById("nameError").innerHTML =
+          "Please enter your name"; 
+        return false;
+      }
+      if (email == "" || !regEmail.test(email)) {
+        document.getElementById("emailError").innerHTML =
+          "Please Enter Valid Email";
+        return false;
+      }
+      if (isNaN(phone) || phone == "") {
+        document.getElementById("telError").innerHTML =
+          "Please Enter Vaild Phone Number";
+         return false;
+      }
+      if (password == "") {
+        document.getElementById("pswdError").innerHTML =
+          "Please Enter Password";
+        return false;
+      }
+      if (password.length < 6) {
+        document.getElementById("pswdError").innerHTML =
+          "Password should be atleast 6 character long";
+        return false;
+      }
+    
+    }
+
+  </script>
+</body>
+</html>
+
+   
