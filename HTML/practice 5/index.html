@@ -11,29 +11,32 @@
     />
   </head>
   <body>
+
     <div class="main-container">
+      <!-- banner -->
       <div class="container">
         <div class="banner">
           <img src="/HTML/image.jpeg" alt="image" />
           <div class="heading">CONTACT US</div>
         </div>
-
+<!-- form -->
         <form onsubmit="handleButtonClick()">
+          <!-- name  -->
           <div class="input-container">
             <i class="far fa-user"></i>
             <input type="text" placeholder="Full name" />
           </div>
-
+ <!-- email -->
           <div class="input-container">
             <i class="far fa-envelope"></i>
             <input type="email" placeholder="Eg. example@gmail.com" />
           </div>
-
+<!-- phone no -->
           <div class="input-container">
             <i class="fas fa-phone"></i>
             <input type="tel" placeholder="Eg. +1800 000000" />
           </div>
-
+<!-- comments  -->
           <div class="textarea-container">
             <i class="far fa-comment"></i>
             <textarea
@@ -42,13 +45,14 @@
               id="comment"
             ></textarea>
           </div>
-
+   <!-- send button -->
           <button>SEND NOW</button>
         </form>
       </div>
     </div>
 
     <script>
+      //after submit button clicked
       function handleButtonClick() {
         alert("Your request has been submitted!");
       }
