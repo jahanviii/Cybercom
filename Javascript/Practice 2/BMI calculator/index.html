@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <script src="script.js"></script>
+  <style>
+   .main-container{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: auto;
+    border-radius: 5%;
+    border: 1px solid black;
+     padding: 14px;
+     font-size: medium;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+   .error{color: red;}
+   h1{text-align: center;}
+   #result,#bmi{
+    text-align: center;
+    font-size:medium;
+   }
+  </style>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+  <div class="main-container">
+      <label for="height">Height (in meters)</label>
+      <input type="number" id="height" class="field" required/>
+      <div id="heightError" class="error"></div>
+      <br>
+      <label for="weight">Weight (in kilograms)</label>
+      <input type="number" id="weight" class="field" required/>
+      <div id="weightError" class="error"></div>
+      <br>
+      <div id="result"></div>
+      <div id="bmi"></div>
+      <br>
+      <button type="submit" onclick="calculateBMI();">Calculate</button>
+  </div>
+</body>
+</html>
