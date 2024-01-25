@@ -352,13 +352,15 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin: 20px auto;
+  margin:90px;
+  padding-top: 8%;
   justify-content: center; 
 }
 #contact h1{
   font-size: 45px;
   color: black;
-  margin-bottom: 25px;
+  margin-top: 45px;
+  margin-bottom: 55px;
   position: relative;
 }
 #contact h1::after{
@@ -400,13 +402,7 @@
   background-color: rgb(149, 208, 235);
   transition: 0.5s;
 }
-/* @media (max-width: 768px) {
-  .social-icon{
-    display: flex;
-    flex-direction: column;
-    
-  }
-} */
+
 /* footer section */
 footer{
   background-color:rgb(10, 82, 129);
