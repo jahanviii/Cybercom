@@ -191,7 +191,7 @@
   font-size:1.6rem ;
   font-weight: 600;
   text-align: center;
-  color: #0e0e0e;
+  color:#072641;
 }
 
 .outerdiv
@@ -261,57 +261,53 @@
 .skill-logo img
 {
   margin:2%;
-  width:23%;
+  width:24%;
 	border-radius:10%;
 	border: 2px solid #cec5c5;
 }
 .div-info ul{
   list-style-type: none;
-  font-size: 25px;
+  font-size: 27px;
+  font-weight: 300;
   margin-top: 20%;
+  font-family: 'Noto Sans', sans-serif;
   line-height: 1.5;
-  color: #4B5258;
+  /* color: #045891; */
+  color: #00417a;
 }
 .div-info h2
 {
   font-family: 'Poppins', sans-serif;
 	font-size: 1.4rem;
-	color: #050404;
+	color:#072641;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 0.8rem;
 }
 .div-info.dark h4{
-	color:#4B5258;
+	color:#072641;
   font-size: 25px;
   font-family: 'Open Sans', sans-serif;
 }
 .div-info.dark p{
-  font-size: 0.9rem;
+  font-size:16px;
   padding-top: 6%;
-  font-family: 'Roboto', sans-serif;
-  color: #0e0e0e;
-
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: black;
+  line-height: 1.6;
 }
- .div-info p
-{
-	font-size: 0.95rem;
-    color:#4B5258;
-    font-weight: 550;
-    opacity: 50%;
-    line-height: 1.5;
-} 
+
 .experience-info p{
-  font-size: 1.125rem;
-  font-family: 'Poppins', sans-serif;
-  color: #0e0e0e;
+  font-size: 21px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color:#2f353a;
 }
 .experience-info h3{
   text-align: center;
-  font-size: 20px;
-  color:#4B5258;
+  font-size: 22px;
+  color:#030303;
   font-family: 'Open Sans', sans-serif;
-  padding-top: 5%;
+  padding-top: 4%;
 }
 
 @media only screen and (max-width: 1000px)
