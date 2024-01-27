@@ -155,7 +155,7 @@
   }
   @media (max-width: 768px) {
     .hello-logo img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
     }
   }
@@ -339,6 +339,12 @@
 	}
 	
 }
+@media only screen and (max-width: 600px) {
+#about{
+  /* margin-top: 10%; */
+  padding-top: 60%;
+}
+}
 
 
 
@@ -398,7 +404,11 @@
   background-color: rgb(149, 208, 235);
   transition: 0.5s;
 }
-
+@media only screen and (max-width: 600px) {
+  #contact{
+    padding-top: 41%;
+  }
+  }
 /* footer section */
 footer{
   background-color:rgb(10, 82, 129);
