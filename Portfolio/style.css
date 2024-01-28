@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   color: black; 
-  background-color:#FEFEFA;
+  background-color:#fdfdfb;
   font-family: 'Roboto', sans-serif;
 }
 .navbar .logo{
@@ -59,6 +59,7 @@
   border-radius: 10px;
  
 }
+ 
 @media screen and (max-width:768px){
   .toggle-button{
     display: flex;
@@ -86,6 +87,7 @@
   .nav-menu.active{
     display: flex;
   }
+ 
 }
   /* HOME PAGE  */
   .wave {

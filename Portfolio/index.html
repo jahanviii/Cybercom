@@ -15,25 +15,28 @@
     <a href="#" style="text-decoration: none;color:black">
       <div class="logo">JB.</div>
     </a>
-       <a href="#" class="toggle-button">
+       <a href="#"  class="toggle-button" >
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
        </a>
         <div class="nav-menu">
           <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contatct</a></li>
+              <li><a href="#"  >Home</a></li>
+              <li><a href="#about"  >About</a></li>
+              <li><a href="#contact" >Contatct</a></li>
         </ul>
         </div>
       </nav>
       <script type="text/javascript">
-        const toggleBtn=document.getElementsByClassName("toggle-button")[0]
+       const toggleBtn=document.getElementsByClassName("toggle-button")[0]
         const navmenu=document.getElementsByClassName("nav-menu")[0]
+        const navLinks = document.querySelectorAll(".nav-link");
+        const navbar=document.getElementsByClassName('navbar')
         toggleBtn.addEventListener("click",()=>{
           navmenu.classList.toggle("active")
-        })
+         
+        })   
       </script>
 
       <!-- Home page content -->
