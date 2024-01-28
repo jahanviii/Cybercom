@@ -169,7 +169,7 @@
   flex-direction: column;
   text-align: center;
   margin: 10px auto;
-  padding-top:1%;
+  padding-top:4%;
   justify-content: center; 
 }
 #about h1{
@@ -343,9 +343,11 @@
 }
 @media only screen and (max-width: 600px) {
 #about{
-  /* margin-top: 10%; */
-  padding-top: 60%;
+  /* margin-top:91%; */
+  /* margin-top: 81%; */
+  padding-top:65%;
 }
+
 }
 
 
