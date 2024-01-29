@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>hii</h2>
+  <div>
+    <p>vhgjb,,</p>
+  </div>
+  <div>
+    <p class="container">javascript</p>
+  </div>
+  <button onclick="myFunction()">Try it</button>
+  
+  <script>
+    function myFunction() {
+        //returns the first element
+      var x = document.querySelector("div > p");
+      x.style.backgroundColor = "pink";
+    }
+    //select h2 or p.container
+    document.querySelector("h2","p.container").style.backgroundColor = "red";
+  </script>
+
+</body>
+</html>

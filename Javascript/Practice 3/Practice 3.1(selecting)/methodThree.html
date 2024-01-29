@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecting Method</title>
+</head>
+<body>
+  <ul>
+    <li>Music</li>
+    <li>Indie Music</li>
+  </ul>
+  <button onclick="changeElement()">
+    Click here for Change!! 
+  </button>
+  <script>
+   function changeElement(){
+    const list=document.getElementsByTagName("ul")[0];
+    list.getElementsByTagName("li")[1].innerHTML="Soothing Music";
+   }
+  </script>
+</body>
+</html>

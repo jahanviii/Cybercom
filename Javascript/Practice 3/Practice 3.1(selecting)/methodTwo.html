@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="main-container">
+    <p>herew</p>
+   <p class="container">hii</p>
+  <p class="container">bye</p>
+  </div>
+  <script>
+    /*all ele that has id main-container and
+     class container inside id element*/
+     const childDOM=document.getElementById('main-container')
+    .getElementsByClassName('container');
+    //output
+    for (let i = 0; i < childDOM.length; i++) {
+      console.log(childDOM[i].textContent);
+    }
+    //console.log(childDOM);
+   
+    //all ele of class
+    const allElement
+    =document.getElementsByClassName('container');
+    let result=document.getElementsByClassName('result');
+    //output
+    console.log(allElement);
+
+    //first ele of class 
+    document.getElementsByClassName('container')[0].style.color="red";
+    
+  </script>
+</body>
+</html>
