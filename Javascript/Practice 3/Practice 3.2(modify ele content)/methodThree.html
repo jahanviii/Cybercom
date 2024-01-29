@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  //insertAdjacentHTML method
+</head>
+<body>
+  <h2 id="header">Hi!</h2>
+  <div id="list">
+    <p>HTML</p>
+    <p>CSS</p>
+  </div>
+  
+  <button id="add" onclick="addText()">Insert</button>
+  <script>
+    function addText() {
+      let list = document.getElementById('list');
+      let newElement = document.createElement('p');
+      newElement.textContent="JS"
+      //let content="JS";
+      list.insertAdjacentElement("afterend",newElement);
+      //beforebegin afterend
+      const header=document.getElementById('header');
+      let text="<span>Good day&nbsp;</span>"
+      header.insertAdjacentHTML("beforeend",text );
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MODIFYING ELEMENT</title>
+  //textContent method
+</head>
+<body>
+  <p>
+    have a great day!!
+  </p>
+  <button onclick="getText()">Click!</button>
+  <div id="output">
+
+  </div>
+  <script>
+    function getText() {
+      let text = document.getElementsByTagName("p")[0].textContent;
+      document.getElementById("output").innerText = text;
+    }
+  </script>
+</body>
+</html>
