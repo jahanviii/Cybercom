@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  //replaceChild() method
+</head>
+<body>
+  <div id="header">
+  <p>Hello</p>
+  </div>
+  <button onclick="replace()">Replace</button>
+  <script>
+    function replace(){
+      let element=document.getElementById('header').children[0];
+      let newText=document.createTextNode("have a good day");
+      element.replaceChild(newText,element.childNodes[0]);
+    }
+  </script>
+</body>
+</html>
