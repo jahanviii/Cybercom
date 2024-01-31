@@ -9,8 +9,9 @@
   <script src="./validation.js"></script>
 </head>
 <body>
-  <form action="productList.html" target="_blank"
-   id="productForm" onsubmit="return validateForm()">
+  <form
+     
+   id="productForm" >
     <div class="main-container">
         <h1>Add Product Form</h1>
         <div class="fields">
@@ -19,14 +20,14 @@
                 <!-- Product Title -->
                 <div class="inputField">
                     <label for="productTitle">Product Title</label>
-                    <input type="text" id="productTitle" name="productTitle" required>
+                    <input type="text" id="title" name="productTitle" required>
                     <div class="error" id="title_error"></div>
                 </div>
 
                 <!-- Price -->
                 <div class="inputField">
                     <label for="priceTitle">Price</label>
-                    <input type="number" id="productPrice" name="productPrice" required>
+                    <input type="number" id="price" name="productPrice" required>
                     <div class="error" id="price_error"></div>
                 </div>
             </div>
@@ -50,36 +51,15 @@
                 </select>
                 <div class="error" id="category_error"></div>
             </div>
-            <button type="submit" value="Save" id="submit" 
-            >Submit</button>
+            <button type="button" onclick="formData()"
+            >Submit</button>"
         </div>
     </div>
 </form>
-
 </div>
-<script>
-    function saveFormData() {
-        let formData = {
-            title: document.getElementById("productTitle").value,
-           price: document.getElementById("productPrice").value,
-            description: document.getElementById("description").value,
-            category: document.getElementById("category").value
 
-        };
-// Retrieve existing form data from local storage
-            let existingDataString = localStorage.getItem("formData");
-            let existingData = existingDataString ? JSON.parse(existingDataString) : [];
-
-            // Add new form data to existing data
-            existingData.push(formData);
-
-            // Convert the updated form data to a JSON string and store it in local storage
-            localStorage.setItem("formData", JSON.stringify(existingData));
-
-        window.location.href = "productList.html";
-
-            return false;
-    }
-</script>
+<script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>

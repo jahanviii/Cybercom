@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Product Data</title>
     <style>
         table {
@@ -26,7 +27,7 @@
 <body>
 
     <h2>Products</h2>
-    <table id="formDataTable">
+    <table id="productTable">
         <thead>
             <tr>
                 <th>Title</th>
@@ -37,59 +38,12 @@
             </tr>
         </thead>
         <tbody></tbody>
-    </table>
-
-    <script>
-        // Retrieve form data from local storage
-        let formDataString = localStorage.getItem("formData");
-        let formData = formDataString ? JSON.parse(formDataString) : []; 
-
-            let table = document.getElementById("formDataTable").getElementsByTagName('tbody')[0];
-
-            for (let i = 0; i < formData.length; i++) {
-                let row = table.insertRow();
-                let cell1 = row.insertCell(0);
-                let cell2 = row.insertCell(1);
-                let cell3 = row.insertCell(2);
-                let cell4 = row.insertCell(3);
+  </table>
+  <script src="script.js"></script>
+  <script>
     
-                cell1.innerHTML = formData[i].title;
-                cell2.innerHTML = formData[i].price;
-                cell3.innerHTML = formData[i].description;
-                cell4.innerHTML = formData[i].category;
-            
-let editButton = document.createElement("button");
-editButton.className = "edit-btn";
-editButton.innerHTML = "Edit";
-editButton.onclick = function() {
-    let rowIndex = this.parentNode.parentNode.rowIndex;
-                let editedProductName = prompt("Enter edited product name:", formData[rowIndex - 1].title);
-                let editedProductPrice = prompt("Enter edited product price:", formData[rowIndex - 1].pice);
-                let editedProductCategory = prompt("Enter edited product category:", formData[rowIndex - 1].category);
-
-                productData[rowIndex - 1].productName = editedProductName;
-                productData[rowIndex - 1].productPrice = editedProductPrice;
-
-                localStorage.setItem("productData", JSON.stringify(productData));
-
-                location.reload();
-  
-};
-cell4.appendChild(editButton);
-
-let deleteButton = document.createElement("button");
-deleteButton.className = "delete-btn";
-deleteButton.innerHTML = "Delete";
-deleteButton.onclick = function() {
-    let rowIndex = this.parentNode.parentNode.rowIndex;
-    formData.splice(rowIndex - 1, 1); // Subtract 1 because of the header row
-    localStorage.setItem("formData", JSON.stringify(formData));
-    location.reload(); // Reload the page to update the table
-};
-cell4.appendChild(deleteButton);
-          
-}
-    </script>
+    loadProductData();
+  </script>
 
 </body>
 </html>
