@@ -53,7 +53,7 @@
       // Get existing product data from local storage
       const productData = JSON.parse(localStorage.getItem("productData")) || [];
 
-      // Find the index of the product to be updated
+      //index of the product to be updated
       const index = productData.findIndex(product => product.title === editProductData.title);
 
       // Update the product data at the found index
