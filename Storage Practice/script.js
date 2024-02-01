@@ -1,7 +1,7 @@
 
 
 function saveFormData() {
-  window.location.href="productList.html";
+  // window.location.href="productList.html";
   const title = document.getElementById("title").value;
   const description = document.getElementById("description").value;
   const category = document.getElementById("category").value;
