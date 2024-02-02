@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+ <script src="./script.js"></script>
+  <style>
+    h1{
+      text-align: center;
+    }
+    
+    .container{
+      justify-content: center;
+      text-align: center;
+      padding: 3px;
+      margin:10%;
+
+      border: solid 1px black;
+    }
+    input{
+      width: 402px;
+      padding: 8px;
+    }
+    input[type="submit"]{
+      color:white;
+      background-color: yellowgreen;
+      width: 40%;
+      padding: 8px;
+    }
+    input[type="button"]{
+      color:white;
+      background-color: yellowgreen;
+      width: 40%;
+      padding: 8px;
+    }
+    .error{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    
+    <div class="container">
+      <h1>Login</h1>
+      <form id="validationForm" onsubmit="return validate()">
+       <div class="inputField">
+        <input type="email" id="email" placeholder="Email" required>
+        <br/>
+        <span class="error" id="emailError"></span>
+        </div>
+        <br/>
+        <div class="inputField">
+        <input type="password" id="pswd" placeholder="Password" required>
+      <br/>
+        <span class="error" id="pswdError"></span>  
+      </div><br/>
+       
+          <input type="submit" value="Submit">
+          <p>OR</p>
+     
+          <a href="/Evaluation/Registration/Registration.html" target="_blank">
+            <input type="button" value="Register Now">
+         
+     
+      </form>
+    </div>
+  </div>
+
+
+</body>
+</html>

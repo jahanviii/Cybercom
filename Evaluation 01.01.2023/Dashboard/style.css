@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.sub-container{
+  border: 1px solid black;
+  width: 195px;
+  padding: 10px;
+}
+/* .main-container{
+  
+  display: flex;
+  color: white;
+  height: 100vh;
+}
+.container{
+  width:20%;
+  background-color: brown;
+
+} */
+/* .main-container h1{  padding-top: 5%;
+} */
+
+.links{
+  padding-top: 9%;
+}
+.links a{
+  font-size: 20px;
+  text-decoration: none;
+  color:white;
+  margin:20%;
+}
+.links a:hover{
+  background-color: rgb(102, 30, 9);
+}
+@media only screen and (max-width: 600px)
+{
+	.main-container {
+    
+	}
+}

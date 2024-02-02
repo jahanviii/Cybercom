@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <script src="script.js"></script>
+  <style>
+    
+    h1{
+      padding-top: 6%;
+    }
+    .main-container{
+      justify-content: center;
+      text-align: center;
+
+      
+      
+    }
+    .inputField select{
+      width: 358px;
+      padding: 8px;
+    }
+    .inputField input{
+      width: 343px;
+      padding: 8px;
+    }
+    input[type="submit"]{
+      margin-top:5px;
+      color: white;
+      background-color: rgb(218, 203, 0);
+      border-radius: 3px;
+      width: 343px;
+      padding: 10px;
+    }  
+  .error{
+    color: red;
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1>Registration</h1>
+    <form onsubmit="()=>{
+      window.location.href='Login.html';
+    }">
+    <div class="inputField">
+      <input type="text" id="name" placeholder="Name" required>
+      <br/>
+      <span id="nameError" class="error"></span>  
+    </div><br/>
+      <div class="inputField">
+        <input type="email" id="email" placeholder="Email" required>
+        <br/>
+        <span id="emailError" class="error"></span> 
+      </div><br/>
+        <div class="inputField">
+          <input type="password" id="password" placeholder="Password" required>
+         <br>
+          <span id="pswdError" class="error"></span>  
+        </div><br/>
+          <div class="inputField">
+            <input type="password" id="cpasswd" placeholder="Confirm Password" required>
+            <br>
+            <span id="cpswdError" class="error"></span>  
+          </div><br/>
+            <div class="inputField">
+              <select id="city" required>
+                <option>
+                Select City
+                </option>
+                <option>
+                  Anand
+                </option>
+                <option>
+                  Rajkot
+                </option>
+                </select>
+              </div><br/>
+              <div class="inputField">
+                <select id="state" required>
+                  <option>
+                   Select State
+                  </option>
+                  <option>
+                    Rajasthan
+                  </option> 
+                  </select> 
+                </div><br/>
+              <input type="checkbox" required>
+              <label for="tnc">Terms & Conditions</label>
+              <br/>
+              <input type="submit" value="Register">
+              </form>
+  </div>
+</body>
+
+</html>

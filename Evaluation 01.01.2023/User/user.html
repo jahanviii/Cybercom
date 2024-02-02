@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <h2>Add User</h2>
+        
+
+        <form id="addUserForm" autocomplete="on">
+
+            <!-- Name -->
+            <div class="form-group">
+                <input type="text" id="userName" name="txtUserName" placeholder="Name">
+            <br/>
+            <span id="nameError" class="error"></span>
+              </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <input type="email" id="userEmail" name="userEmail" placeholder="Email" >
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <input type="password" id="userPassword" name="userPassword" placeholder="Password" >
+            </div>
+
+            <!-- Birthdate -->
+            <div class="form-group">
+                <input type="date" id="userBday" name="userBday" placeholder="Birthdate" >
+            </div>
+
+
+            <button type="submit"
+            >Add User</button>
+        </form>
+        <h2>User List</h2>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Birthdate</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+         
+            <tbody  id="userList">
+
+            </tbody>
+                <!--  Dynamic User list here -->
+
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
