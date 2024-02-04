@@ -1,58 +1,104 @@
+function addData() {
+  // Get form values
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let bday = document.getElementById("bday").value;
 
+  // Calculate age from birthday
+  let age = calculateAge(bday);
 
+  // Create an object to store the data
+  let dataObject = { 
+    name: name,
+     email: email,
+     password: password, 
+     birthday: bday
+    };
 
-function showData(){
-  let localData=localStorage.getItem("users");
-  let tableData=localData?JSON.parse(localData):[];
- 
-  const tableRows=document.getElementById('userList');
-  tableData.forEach(element => {
-    tableRows += `<tr>
-          <td>${element.name}</td>
-          <td>${element.email}</td>
-          <td>${element.password}</td>
-          <td>${element.date}</td>
-          
-          <td>
-            <button onclick=loadRecordToField('${element.id}')>Edit</button>
-            <button onclick=deleteRecord('${element.id}')>Delete</button>              
-          </td>
-          </tr>
-        `;
+  // Get existing data from localStorage or create an empty array
+  let existingData = JSON.parse(localStorage.getItem("userData")) || [];
+
+  // Add the new data to the array
+  existingData.push(dataObject);
+
+  // Save the updated array back to localStorage
+  localStorage.setItem("userData", JSON.stringify(existingData));
+
+  // Update the table
+  updateTable();
+}
+
+function calculateAge(birthdate) {
+  let today = new Date();
+  let birthDate = new Date(birthdate);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+// Function to update the table with data from localStorage
+function updateTable() {
+  // Get the table body element
+  let tableBody = document.getElementById("userList");
+
+  // Clear the table body
+  tableBody.innerHTML = "";
+
+  // Get data from localStorage
+  let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+  // Loop through the data and add rows to the table
+  userData.forEach(function (element, index) {
+    let row = tableBody.insertRow();
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
+    let cell5 = row.insertCell(4);
+    let cell6 = row.insertCell(5);
+
+    cell1.innerHTML = element.name;
+    cell2.innerHTML = element.email;
+    cell3.innerHTML = element.password;
+    cell4.innerHTML = element.birthday;
+    cell5.innerHTML = element.age;
+
+    // Add "Edit" and "Delete" buttons with onclick handlers
+    cell6.innerHTML = '<button class="btn btn-warning" onclick="editData(' + index + ')">Edit</button> ' +
+                      '<button class="btn btn-danger" onclick="deleteData(' + index + ')">Delete</button>';
   });
- tableRows.append(tableRows);
+  document.getElementById("dataForm").reset();
+}
+function deleteData(index) {
+  // Get data from localStorage
+  let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+  // Delete the selected data from localStorage
+  userData.splice(index, 1);
+  localStorage.setItem("userData", JSON.stringify(userData));
+
+  // Update the table
+  updateTable();
 }
 
 
-function addData(){
-  const userName=document.getElementById("userName").value;
-  const userEmail=document.getElementById('userEmail').value;
-  const userPassword=document.getElementById('userPassword').value;
-  const userBday=document.getElementById('userBday').value;
+
+function editData(index) {
+  let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
   
-  let localData=localStorage.getItem("users");
-let tableData=localData?JSON.parse(localData):[];
-
-if(tableData==null && tableData.length>0){
-  tableData=[
-    ...tableData,{
-      id:Date.now(),
-      userName:userName,
-      userEmail:userEmail,
-      userPassword:userPassword,
-      userBday:userBday,
-    },
-  ];
-  localStorage.setItem('users',JSON.stringify(tableData));
-}else{
-tableData=[
-  {
-  userName:userName,
-  userEmail:userEmail,
-  userPassword:userPassword,
-  userBday:userBday,
-}];
 }
-localStorage.setItem('users',JSON.stringify(tableData));
-showData();
-};
+
+
+
+
+
+
+
+
+
+

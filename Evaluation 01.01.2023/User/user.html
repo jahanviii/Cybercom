@@ -1,66 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./script.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<style>
+  body{
+    padding: 12px;
+  }
+</style>
 <body>
+
     <div class="container">
-
-        <h2>Add User</h2>
-        
-
-        <form id="addUserForm" autocomplete="on">
-
-            <!-- Name -->
-            <div class="form-group">
-                <input type="text" id="userName" name="txtUserName" placeholder="Name">
-            <br/>
-            <span id="nameError" class="error"></span>
-              </div>
-
-            <!-- Email -->
-            <div class="form-group">
-                <input type="email" id="userEmail" name="userEmail" placeholder="Email" >
+        <h2>Add Data Form</h2>
+    
+        <!-- Data Input Form -->
+        <form id="dataForm">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" required>
             </div>
-
-            <!-- Password -->
-            <div class="form-group">
-                <input type="password" id="userPassword" name="userPassword" placeholder="Password" >
+            <div class="form-group col-md-3">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" required>
             </div>
-
-            <!-- Birthdate -->
-            <div class="form-group">
-                <input type="date" id="userBday" name="userBday" placeholder="Birthdate" >
+            <div class="form-group col-md-3">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password" required>
             </div>
-
-
-            <button type="submit"
-            >Add User</button>
+            <div class="form-group col-md-3">
+              <label for="bday">Birthday:</label>
+              <input type="date" class="form-control" id="bday" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addData()">Add Data</button>
         </form>
-        <h2>User List</h2>
-        <table id="userTable">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Birthdate</th>
-                    <th>Age</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-         
-            <tbody  id="userList">
-
-            </tbody>
-                <!--  Dynamic User list here -->
-
-        </table>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <br/>
+    <!-- Data Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Birthday</th>
+          <th>Age</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="userList"></tbody>
+    </table>
+  </div>
 </body>
 </html>
