@@ -1,3 +1,4 @@
+// add data to localstorage
 function addData() {
   // Get form values
   let name = document.getElementById("name").value;
@@ -5,10 +6,10 @@ function addData() {
   let password = document.getElementById("password").value;
   let bday = document.getElementById("bday").value;
 
-  // Calculate age from birthday
+
   let age = calculateAge(bday);
 
-  // Create an object to store the data
+//store into object
   let dataObject = { 
     name: name,
      email: email,
@@ -16,7 +17,7 @@ function addData() {
      birthday: bday
     };
 
-  // Get existing data from localStorage or create an empty array
+  // Get existing data from localStorage 
   let existingData = JSON.parse(localStorage.getItem("userData")) || [];
 
   // Add the new data to the array
@@ -39,14 +40,14 @@ function calculateAge(birthdate) {
   }
   return age;
 }
-
+//show data in table
 // Function to update the table with data from localStorage
 function updateTable() {
   // Get the table body element
   let tableBody = document.getElementById("userList");
 
   // Clear the table body
-  tableBody.innerHTML = "";
+  tableBody.innerHTML = ""
 
   // Get data from localStorage
   let userData = JSON.parse(localStorage.getItem("userData")) || [];
