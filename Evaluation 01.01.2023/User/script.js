@@ -67,14 +67,13 @@ function updateTable() {
     cell4.innerHTML = element.birthday;
     cell5.innerHTML = element.age;
 
-    // Add "Edit" and "Delete" buttons with onclick handlers
     cell6.innerHTML = '<button class="btn btn-warning" onclick="editData(' + index + ')">Edit</button> ' +
                       '<button class="btn btn-danger" onclick="deleteData(' + index + ')">Delete</button>';
   });
   document.getElementById("dataForm").reset();
 }
 function deleteData(index) {
-  // Get data from localStorage
+  //  from localStorage
   let userData = JSON.parse(localStorage.getItem("userData")) || [];
 
   // Delete the selected data from localStorage
