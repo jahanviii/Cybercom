@@ -1,5 +1,7 @@
  const a=[1,2,3];
+
 //array methods
+let stringConvert=a.toString()//convert to string
 //add ele to end of array
  a.push(4);
 // a.pop();
