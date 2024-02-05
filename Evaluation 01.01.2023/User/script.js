@@ -73,6 +73,8 @@ function updateTable() {
   });
   document.getElementById("dataForm").reset();
 }
+
+
 function deleteData(index) {
   //  from localStorage
   let userData = JSON.parse(localStorage.getItem("userData")) || [];
