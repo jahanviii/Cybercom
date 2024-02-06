@@ -26,11 +26,13 @@
   <script>
     
     const products = [
-    { id: 1, name: 'Sneakers', price: 5000.00, image:'assets/imageOne.jpg' },
-    { id: 2, name: 'Block heels', price: 2000.00, image: 'assets/imageTwo.jpg'}
+    { id: 1, name: 'Sneakers', price: 5000.00, image:'assets/imageOne.jpg' ,quantity:0},
+    { id: 2, name: 'Block heels', price: 2000.00, image: 'assets/imageTwo.jpg',quantity:0}
     ];
-          localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem("cart", JSON.stringify(products));
+
     const productsData = JSON.parse(localStorage.getItem("cart"));
+
 const productList = document.getElementById("productList");
 productsData.forEach((product) => {
   const productCard = `
@@ -79,13 +81,23 @@ function decreaseQuantity(productId) {
     inputQuantity.value=--quantity;
   }
 }
- function addToCart(productId) {
-      const product = products.find(p => p.id === productId);
-      const quantity = parseInt(document.getElementById(`quantity-${productId}`).value);
-          cart.push({ ...product, quantity });      
-    }   
-  </script>
 
-  
+function addToCart(productId) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const product = products.find(p => p.id === productId);
+      const quantity = parseInt(document.getElementById(`quantity-${productId}`).value, 10) || 0;
+
+      if (quantity > 0) {
+        const existingProductIndex = cart.findIndex(p => p.id === productId);
+
+        if (existingProductIndex !== -1) {
+          cart[existingProductIndex].quantity = quantity;
+        } else {
+          cart.push({ ...product, quantity });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+}}
+  </script> 
 </body>
 </html>

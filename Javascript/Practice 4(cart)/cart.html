@@ -18,6 +18,8 @@
   </div>
 
   <script>
+    
+
     function deleteFromCart(productId) {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
       const updatedCart = cart.filter(p => p.id !== productId);
