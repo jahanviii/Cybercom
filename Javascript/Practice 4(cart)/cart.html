@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title> Cart</title>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2>Shopping Cart</h2>
+    
+      <div id="cart-body"></div>
+  <br/>
+    <h4>Total: Rs.<span id="total">0.00</span></h4>
+    <button class="btn btn-outline-danger">Proceed to Buy</button>
+  </div>
+
+  <script>
+    function deleteFromCart(productId) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const updatedCart = cart.filter(p => p.id !== productId);
+
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      displayCart();
+    }
+
+    function displayCart() {
+      const cartBody = document.getElementById('cart-body');
+      const totalSpan = document.getElementById('total');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      cartBody.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((product) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><img src="${product.image}" alt="${product.name}" style="width:60px;">&nbsp;</td>
+          <br/>
+          <td>${product.name}&nbsp;</td>
+          <br/>
+          <td>${product.price}&nbsp;</td>
+        
+          <td>${product.quantity}&nbsp;</td>
+          <td>
+            <button class="btn btn-outline-danger" onclick="deleteFromCart(${product.id})">Delete</button>
+          </td>
+        `;
+        cartBody.appendChild(row);
+        total += product.price * product.quantity;
+      });
+
+      totalSpan.textContent = total.toFixed(2);
+    }
+
+    displayCart();
+  </script>
+
+  
+</body>
+</html>

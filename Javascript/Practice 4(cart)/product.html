@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Product List</title>
+</head>
+<style>
+  .cartbtn{
+    width: 100px;
+    margin-left: 90%;
+  }
+</style>
+<body>
+<div class=" bg-light mr-auto">
+
+  <a href="cart.html" class="btn d-block btn-primary cartbtn text-right" target="_blank">View Cart</a>
+</div>
+  <div class="container mt-5">
+    <h2>Product List</h2>
+    <div id="productList" class="row"></div>
+    
+  </div>
+
+  <script>
+    
+    const products = [
+    { id: 1, name: 'Sneakers', price: 5000.00, image:'assets/imageOne.jpg' },
+    { id: 2, name: 'Block heels', price: 2000.00, image: 'assets/imageTwo.jpg'}
+    ];
+          localStorage.setItem("cart", JSON.stringify(cart));
+    const productsData = JSON.parse(localStorage.getItem("cart"));
+const productList = document.getElementById("productList");
+productsData.forEach((product) => {
+  const productCard = `
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="${product.image}" class="img-fluid rounded-start" alt="${product.name}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text">Price: Rs.${product.price}</p>
+
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-secondary decrease" 
+              onclick="decreaseQuantity(${product.id})" >-</button>
+              <input type="text" class="form-control" value="0" id="quantity-${product.id}">
+              <button class="btn btn-outline-secondary increase" 
+              onclick="increaseQuantity(${product.id})"
+              >+</button>
+            </div>
+
+            <button class="btn btn-primary"
+            onclick="addToCart(${product.id})" >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  productList.insertAdjacentHTML("beforeend", productCard);
+});
+
+function increaseQuantity(productId) {
+  const inputQuantity = document.getElementById(`quantity-${productId}`);
+  let quantity = parseInt(inputQuantity.value);
+  inputQuantity.value = ++quantity;
+}
+
+function decreaseQuantity(productId) {
+  const inputQuantity = document.getElementById(`quantity-${productId}`);
+  let quantity = parseInt(inputQuantity.value);
+  if (quantity <= 0) {
+    inputQuantity.value =0;
+  }else{
+    inputQuantity.value=--quantity;
+  }
+}
+ function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      const quantity = parseInt(document.getElementById(`quantity-${productId}`).value);
+          cart.push({ ...product, quantity });      
+    }   
+  </script>
+
+  
+</body>
+</html>
