@@ -1,0 +1,19 @@
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.list-group {
+  margin-bottom: 0;
+}
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-group-item input[type="checkbox"] {
+  margin-right: 10px;
+}
