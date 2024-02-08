@@ -1,10 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=IBM+Plex+Sans:wght@200&family=Montserrat:wght@200&family=Noto+Sans:wght@300&family=Open+Sans:wght@300;700&family=Poppins:wght@100;200&family=Protest+Revolution&family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
 body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+}
+.container h1{
+  text-align: center;
+   font-size: 39px;
+   /* font-family: 'Quicksand', sans-serif; */
+   font-family: 'Lato', sans-serif;
+   /* font-family: 'Poppins', sans-serif; */
+}
+.container label{
+  font-size: 14px;
+   font-family:'Open Sans', sans-serif;
+  font-weight: bold;
 }
 .container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Open Sans', sans-serif; */ 
+  /* font-family: 'Single Day', cursive; */
 }
 .list-group {
   margin-bottom: 0;
@@ -16,4 +34,8 @@ body {
 }
 .list-group-item input[type="checkbox"] {
   margin-right: 10px;
+}
+.custom-width{
+  width:50%; 
+  margin-left:650px;
 }
