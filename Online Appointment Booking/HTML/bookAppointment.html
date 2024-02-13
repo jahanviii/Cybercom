@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="/JS/doctorAppointment.js"></script>
-
+  <title>Appointment Booking</title>
+  <script src="/JS/bookAppointment.js"></script>
 </head>
 <body>
-   <nav>
-    <button onclick="logout()">logout</button>
-  </nav>
-  <div id="fixedAppointments"></div>
-  <h1>Appointment Request For You</h1>
- <div id="appointmentRequests"></div> 
+  <h1>Appointment Booking</h1>
+  <button onclick="logout()">logout</button>
 
-</body>
-<script>
+  <h1>Welcome<span id="username"></span></h1>
+
+  <form id="book-appointment-form">
+    <label for="doctor">Doctor:</label>
+    <select id="doctor" name="doctor">
+      <option value="dr1">Dr. Mehta</option>
+      <option value="dr2">Dr.  Patel</option>
+    </select>
+    <br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+    <br>
+    <button type="submit">Book Appointment</button>
+  </form>
+ <script>
   window.history.forward();
-</script>
+ </script>
+</body>
 </html>
