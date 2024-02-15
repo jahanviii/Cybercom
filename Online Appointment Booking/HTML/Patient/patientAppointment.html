@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduler</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Appointment Scheduler</h1>
+        <button onclick="logout()">Logout</button>
+        <form id="appointmentForm">
+            <div class="container mb-5">
+                <label for="doctor" class="form-label">Select Doctor:</label>
+                <select id="doctor" class="form-select">
+                    <option>Select</option>
+                    <!-- Doctors  -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Select Date:</label>
+                <input type="date" id="date" class="form-control" min="{{\[new Date()\].toISOString().split('T')[0\]}}">
+            </div>
+            <button type="submit" onsubmit="submitData()"class="btn btn-primary">Book Appointment</button>
+        </form>
+        <h2 class="mt-4">Appointments</h2>
+        <table class="table mt-2">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="appointments"></tbody>
+        </table>
+    </div>
+    <!-- <script src="/HTML/doctor/script.js"></script> -->
+    <script> 
+        document.addEventListener('DOMContentLoaded', () => 
+        { const doctorData = JSON.parse(localStorage.getItem('doctorData'))||[]; 
+        const doctorSelect = document.getElementById('doctor'); 
+        if (doctorData) { 
+            const option = document.createElement('option'); 
+            option.value = `${doctorData.firstName}`;
+             option.textContent = `${doctorData.firstName} `; 
+             doctorSelect.appendChild(option); 
+            }
+              else {
+         console.error("error");
+         } 
+        });
+        //book appointment
+const appointmentForm=document.getElementById('appointmentForm');
+appointmentForm.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    const doctorName = document.getElementById('doctor').value; 
+    const dateInput = document.getElementById('date').value; 
+    if (new Date(dateInput) < new Date()) {
+      alert('Please select a date in the future.');
+      
+    }
+    if(doctorName === '') {
+      alert('Please select a doctor.');
+     
+    }else{
+        alert('booked')
+     const patientAppointment ={
+       dateInput,
+      doctorName,
+      approved:false
+     };
+     
+    localStorage.setItem("patientAppointment", JSON.stringify(patientAppointment));
+    displayAppointment(patientAppointment);
+
+    }
+})
+
+//display appointment
+function displayAppointment(appointment) {
+     const appointments = document.getElementById('appointments'); 
+     const row = appointments.insertRow(); 
+     const idCell = row.insertCell();
+      idCell.textContent = '1'; 
+      const doctorCell = row.insertCell();
+       doctorCell.textContent = appointment.doctorName; 
+       const dateCell = row.insertCell(); 
+       dateCell.textContent = appointment.dateInput;
+        const statusCell = row.insertCell(); 
+statusCell.textContent = appointment.approved ? 'Approved' : 'Pending';
+ }
+
+function logout() {
+  window.location.href="login.html"  
+}
+
+     </script>
+</body>
+</html>

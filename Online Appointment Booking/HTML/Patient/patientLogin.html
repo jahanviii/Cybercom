@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Booking</title>
+  
+</head>
+
+<body>
+  <div id="main-container">
+    <nav><button onclick="dashboard()">Dashboard</button>
+    
+    </nav>
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+     
+      <button type="submit" value="Login" onclick="patientLogin()">Login</button>
+    </form>
+    <p>Don't have an account? 
+      <a id="register-link" href="./patientRegister.html">
+        Register
+      </a>
+    </p>
+  </div>
+  <script src="/HTML/patient/patientlogin.js"></script>
+
+  <script type="text/javascript"> 
+ //window.history.forward();
+ function dashboard(){
+  window.location.href='HTML/loadingPage.html'
+}
+   /** function preventBack() { 
+        window.history.forward();  
+    } 
+      
+    setTimeout(preventBack(), 0);**/ 
+      
+</script> 
+</body>
+</html>

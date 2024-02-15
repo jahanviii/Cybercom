@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/HTML/patient/patientRegister.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1> Registration</h1>
+      <form id="registration-form">
+        <div class="form-group">
+          <label for="user-name">UserName*</label>
+          <input type="text" id="user-name" required />
+        </div>
+        <div class="form-group">
+          <label for="first-name">First Name*</label>
+          <input type="text" id="first-name" required />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name*</label>
+          <input type="text" id="last-name" required />
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth*</label>
+          <input type="date" id="dob" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password for Login*</label>
+          <input type="password" id="password" required />
+        </div>
+       
+       
+        <div class="form-group">
+          <label for="phone-number">Phone Number*</label>
+          <input type="tel" id="phone-number" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Address*</label>
+          <textarea id="address" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" onclick="patientRegister()">Register</button>
+        </div>
+        <p>Already have an account? 
+          <a id="login-link" href="./patientLogin.html" target="_blank">Login</a></p>
+
+      </form>
+    </div>
+   
+<!-- 
+      <script type="text/javascript"> 
+        function preventBack() { 
+            window.history.forward();  
+        } 
+          
+        setTimeout("preventBack()", 0); 
+          
+    </script>  -->
+
+  </body>
+</html>
