@@ -109,80 +109,30 @@ savedQuotes.push(quote);
           <button type="button" class="btn btn-primary" id="edit-quote" data-quote-id="${element.id}">Edit</button>
           <button type="button" class="btn btn-danger" id="delete-quote" data-quote-id="${element.id}">Delete</button>
       </div>`;
-      container.appendChild(div);
+      container.appendChild(div); 
+      //delete
+      const deleteButton = div.querySelector('.delete-quote');
+      deleteButton.addEventListener('click', () => {
+        deleteQuote(element.id);
+      });
   });
- 
+    function  deleteQuote(quoteId){
+    let savedQuotes = JSON.parse(localStorage.getItem('newQuotes')) || [];
+  
+    const index = savedQuotes.findIndex(quote => quote.id === quoteId);
+    
+    if (index !== -1) {
+      savedQuotes.splice(index, 1);
+      
+      localStorage.setItem('newQuotes', JSON.stringify(savedQuotes));
+      
+      // renderQuotes(savedQuotes);
 }
+    }
+  }
 fetchQuotes();  
 })
 
-// const quoteForm = document.getElementById('quote-form');
-//   quoteForm.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     const quote = {
-//       id: Date.now(),
-//       text: document.getElementById('quote').value,
-//       author: document.getElementById('author').value
-//     };
-//     localStorage.setItem('newQuotes',JSON.stringify(quote))
-//     createQuote(quote)
-   
-//     quoteForm.reset();
-//   });
-//   //crete fun
-//   function createQuote(quote) {
-//     const savedQuotes = JSON.parse(localStorage.getItem('newQuotes'));
-//     // savedQuotes.forEach(element=>{
-//       console.log('Quote created:', data);
-//       const container = document.getElementById('new-quotes-container');
-//       const div = document.createElement('div');
-//       div.className = 'col-md-3 mb-4';
-//       div.style.margin = '6px';
-//       div.style.alignItems = 'center';
-//       div.style.border = '1px solid black';
-//       div.innerHTML = ` <div>
-//       <h2>Quote: ${savedQuotes.text}</h2>
-//       <h3>Author: ${savedQuotes.author}</h3>
-//       <button type="button" class="btn btn-primary" id="edit-quote" data-quote-id="${savedQuotes.id}">Edit</button>
-//     <button type="button" class="btn btn-danger" id="delete-quote" data-quote-id="${savedQuotes.id}">Delete</button>
-//     </div>
-//   `;
-// container.appendChild(div);
-
-// // })
-//     }
-  
-    // fetch(url, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(quote)
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //   console.log('Quote created:', data);
-    //   const container = document.getElementById('new-quotes-container');
-    //   const div = document.createElement('div');
-    //   div.className = 'col-md-3 mb-4';
-    //   div.style.margin = '6px';
-    //   div.style.alignItems = 'center';
-    //   div.style.border = '1px solid black';
-    //   div.innerHTML = `
-    //             <div>
-    //               <h2>Quote: ${quote.text}</h2>
-    //               <h3>Author: ${quote.author}</h3>
-    //               <button type="button" class="btn btn-primary" id="edit-quote" data-quote-id="${quote.id}">Edit</button>
-    //             <button type="button" class="btn btn-danger" id="delete-quote" data-quote-id="${quote.id}">Delete</button>
-    //             </div>
-    //           `;
-    //   container.appendChild(div);
-
-    // })
-//   }
-//         //fetch all quotes
-//         fetchQuotes();
-// });
 
 
 
