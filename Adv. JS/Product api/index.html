@@ -11,10 +11,19 @@
   <nav style="display: flex;">
     <h3>Products</h3>
     <br/>
+    <input class="form-control" type="search"
+    id="search-input"
+    style="width:40%;margin:1%;" placeholder="Search" aria-label="Search">
+    <br/>
     <a href="addProduct.html" target="_blank" style="padding: 1%;">
       <button type="button" class="btn btn-info">Add new product</button>
     </a>
-
+    <label for="sort-select">Sort By:</label>
+    <select class="form-control" id="sort-select">
+      <option>Select value</option>
+        <option value="price-low-to-high">Price: Low to High</option>
+        <option value="price-high-to-low">Price: High to Low</option>
+    </select>
   </nav>
   <div id="product-list">
 
