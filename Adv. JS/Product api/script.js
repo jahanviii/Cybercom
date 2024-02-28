@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const url ='https://api.escuelajs.co/api/v1/products';
   let data = []; // Variable to store fetched data
-
+  let currentPage = 1;
+    const itemsPerPage = 9;
   function fetchData() {
     fetch(url)
       .then(response => {
@@ -12,13 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(products => {
         data = products; // Store fetched data
-        renderProducts(products); // Render products initially
+        renderProductsByPage(products); // Render products initially
       })
       .catch(error => {
         console.log('Error fetching data:', error);
       });
   }
-
+// render product per page
+function renderProductsByPage(page) {
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const productsToShow = data.slice(startIndex, endIndex);
+  renderProducts(productsToShow);
+}
+// render product
   function renderProducts(products) {
     const productList = document.getElementById('product-list');
     productList.innerHTML = ''; // Clear existing content
@@ -59,6 +67,33 @@ sortSelect.addEventListener('change', () => {
   }
   renderProducts(data);
 });
+//filter functionality
+const categorySelect = document.getElementById('category-select');
+categorySelect.addEventListener('change', () => {
+    const selectedCategory = categorySelect.value;
+    if (selectedCategory !== 'all') {
+        fetchProductsByCategory(selectedCategory)
+            .then(products => {
+                renderProducts(products);
+            });
+    } else {
+        renderProducts(data); 
+    }
+});
+// category
+function fetchProductsByCategory(categoryId) {
+  const categoryUrl = `https://api.escuelajs.co/api/v1/categories/${categoryId}/products`;
+  return fetch(categoryUrl)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      })
+      .catch(error => {
+          console.log('Error fetching category products:', error);
+      });
+}
       // Edit functionality
       const editButton = container.querySelector('#edit-quote');
       editButton.addEventListener('click', () => {
@@ -104,7 +139,25 @@ sortSelect.addEventListener('change', () => {
     });
     renderProducts(filteredData);
   });
+//pagination
+// Pagination buttons
+const prevPageBtn = document.getElementById('prev-page-btn');
+const nextPageBtn = document.getElementById('next-page-btn');
 
+prevPageBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        renderProductsByPage(currentPage);
+    }
+});
+
+nextPageBtn.addEventListener('click', () => {
+    const maxPage = Math.ceil(data.length / itemsPerPage);
+    if (currentPage < maxPage) {
+        currentPage++;
+        renderProductsByPage(currentPage);
+    }
+});
   // Fetch product list initially
   fetchData();
   //new product add data

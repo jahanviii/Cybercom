@@ -13,17 +13,34 @@
     <br/>
     <input class="form-control" type="search"
     id="search-input"
-    style="width:40%;margin:1%;" placeholder="Search" aria-label="Search">
+    style="width:20%;margin:1%;" placeholder="Search" aria-label="Search">
     <br/>
     <a href="addProduct.html" target="_blank" style="padding: 1%;">
       <button type="button" class="btn btn-info">Add new product</button>
     </a>
-    <label for="sort-select">Sort By:</label>
-    <select class="form-control" id="sort-select">
+    <!-- //sort -->
+    <label for="sort-select" >Sort By:</label>
+    <select class="form-control" style="width:10%;"
+    id="sort-select">
       <option>Select value</option>
         <option value="price-low-to-high">Price: Low to High</option>
         <option value="price-high-to-low">Price: High to Low</option>
     </select>
+    <!-- //filter -->
+    <label for="category-select">Select a category:</label>
+    <select id="category-select" class="form-control" style="width:10%;">
+        <option value="all">All Categories</option>
+        <option value="1">Clothes</option>
+        <option value="2">Electronics</option>
+        <option value="3">nueva titulo</option>
+        <option value="4"> Shoes</option>
+    </select>
+    <!-- pagination -->
+    
+    <div id="pagination" class="mt-4">
+      <button id="prev-page-btn" class="btn btn-primary mr-2">Previous</button>
+      <button id="next-page-btn" class="btn btn-primary">Next</button>
+  </div>
   </nav>
   <div id="product-list">
 
