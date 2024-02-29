@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function(){
   const editProductForm = document.getElementById('editProductForm');
   // Get ID parameter from URL
   const productId = new URLSearchParams(window.location.search).get('id');
-  console.log('Product ID:', productId); // Check if the product ID is correct
+  console.log('Product ID:', productId); 
 
-  // Fetch product data based on the product ID from the URL
   fetch(`https://api.escuelajs.co/api/v1/products/${productId}`)
       .then(response => {
           if (response.ok) {
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function(){
           }
       })
       .then(product => {
-          // Bind product data
           document.getElementById('title').value = product.title;
           document.getElementById('imageUrl').value = product.images[0];
           document.getElementById('price').value = product.price;
@@ -27,11 +25,9 @@ document.addEventListener("DOMContentLoaded", function(){
           alert('Error fetching product data. Please try again.');
       });
 
-  // Event listener for form submission
   editProductForm.addEventListener('submit', function(event) {
       event.preventDefault();
       if (validateForm()) {
-          // Retrieve form data
           const title = document.getElementById('title').value.trim();
           const imageUrl = document.getElementById('imageUrl').value.trim();
           const price = document.getElementById('price').value.trim();
