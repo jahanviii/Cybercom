@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const url ='https://api.escuelajs.co/api/v1/products';
-  let data = []; // Variable to store fetched data
+  let data = []; 
   let currentPage = 1;
     const itemsPerPage = 9;
   function fetchData() {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(products => {
         data = products; // Store fetched data
-        renderProductsByPage(products); // Render products initially
+        renderProductsByPage(1); // Render products initially
       })
       .catch(error => {
         console.log('Error fetching data:', error);
@@ -65,7 +65,8 @@ sortSelect.addEventListener('change', () => {
   } else if (sortBy === 'price-high-to-low') {
       data.sort((a, b) => b.price - a.price);
   }
-  renderProducts(data);
+  renderProductsByPage(1);
+  // renderProducts(data);
 });
 //filter functionality
 const categorySelect = document.getElementById('category-select');
@@ -74,6 +75,7 @@ categorySelect.addEventListener('change', () => {
     if (selectedCategory !== 'all') {
         fetchProductsByCategory(selectedCategory)
             .then(products => {
+                // renderProductsByPage(1);
                 renderProducts(products);
             });
     } else {
@@ -97,7 +99,7 @@ function fetchProductsByCategory(categoryId) {
       // Edit functionality
       const editButton = container.querySelector('#edit-quote');
       editButton.addEventListener('click', () => {
-        // editProduct(product.id);
+         window.open(`editProduct.html?id=${product.id}`,'_blank')
       });
 
       productList.appendChild(container);
@@ -125,8 +127,8 @@ function fetchProductsByCategory(categoryId) {
     }
   }
 
-  // Function to edit a product
 
+ 
 
   // Search functionality
   const searchInput = document.querySelector('#search-input');

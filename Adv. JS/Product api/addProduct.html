@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style>
+    .add-product-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="add-product-container">
+    <nav>
+      <a href="./index.html" target="_blank" style="padding: 1%;">
+        <button type="button" class="btn btn-info">Home Page</button>
+      </a>
+    </nav>
+    <h4>Add Products</h4>
+    <br/>
+    <input class="form-control mx-auto" type="text" placeholder="title" id="product-title">
+    <br/>
+    <input class="form-control" type="number" placeholder="price" id="product-price">
+    <br/>
+    <label for="category-select" class="form-control">Category:</label>
+    <select id="category-select" class="form-control" required>
+      
+    </select>
+    <br><br>
+    <input class="form-control" type="text" placeholder="Category Id" id="category-id">
+    <br/>
+    <textarea class="form-control" id="description" placeholder="description"></textarea>
+    <br/>
+    <input type="url" class="form-control" placeholder="image" id="image-url" />
+    <br/>
+    <button type="submit" id="submit-btn" onclick="submitData()" class="btn btn-primary">Submit</button>
+  </div>
+  <script src="./addProduct.js"></script>
+</body>
+</html>
