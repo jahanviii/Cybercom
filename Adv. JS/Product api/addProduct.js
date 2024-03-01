@@ -17,9 +17,8 @@ function submitData() {
         })
         .then(categories => {
             const selectCategory = document.getElementById('category-select');
-            selectCategory.innerHTML = ''; // Clear existing options
+            selectCategory.innerHTML = ''; 
   
-            // Populate select options with fetched categories
             categories.forEach(category => {
                 const option = document.createElement('option');
                 option.value = category.id;

@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
       })
       .then(products => {
-        data = products; // Store fetched data
-        renderProductsByPage(1); // Render products initially
+        data = products; 
+        renderProductsByPage(1); 
       })
       .catch(error => {
         console.log('Error fetching data:', error);
